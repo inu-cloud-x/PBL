@@ -51,7 +51,7 @@
 ├── README.md           # Current File (Overview)
 └── 2025/               # 2025 Projects Source & Docs
     ├── README.md       # 2025 Project List
-    └── (Project Dirs)
+    └── (Project Dirs)  # 2025 Project materials
 
 ```
 
