@@ -97,7 +97,7 @@ PBL(Project Based Learning) 및 해커톤의 결과물을 정리한 공간입니
 *   **기대 효과**: 향후 SpikeYolo 등 완전 SNN 기반 모델의 2-PC 통합을 위한 연구 방향성 제시함.
 *   **팀원 역할**: 
     *   **우정흠**: SNN 기반 객체 탐지 실험 설계, ANN-to-SNN 변환 시도 및 결과 분석 수행함.
-*   [결과물] (https://github.com/realbb/PBL25_Spike-Driven-Privacy-Preserving-Yolo)
+*   [결과물](https://github.com/realbb/PBL25_Spike-Driven-Privacy-Preserving-Yolo)
 
 ---
 
@@ -115,7 +115,7 @@ PBL(Project Based Learning) 및 해커톤의 결과물을 정리한 공간입니
 *   **팀원 역할**: 
     *   **신성환**: 데이터 수집, 파이프라인 설계, EventBridge & Lambda 자동화, 보안 관리함.
     *   **이현빈**: 데이터 전처리, LLM 프롬프트 구성 및 리포트 생성, 이메일 발송 시스템 구현함.
-* [결과물] (https://github.com/HBL03/ConnectedCarPBL)
+* [결과물](https://github.com/HBL03/ConnectedCarPBL)
 ---
 
 ### 7. 기밀 컴퓨팅 기반 딥페이크 음성 탐지 서비스
