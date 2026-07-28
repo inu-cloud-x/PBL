@@ -1,0 +1,44 @@
+[project]
+name = "t2c-prov"
+version = "0.1.0"
+description = "Provenance-Anchored Text-to-CadQuery Generation Audit Chain"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cadquery>=2.4",
+    "build123d>=0.10.0",
+    "torch>=2.2",
+    "transformers>=4.40",
+    "accelerate>=0.30",
+    "huggingface_hub>=0.23",
+    "web3>=6.15",
+    "eth-account>=0.11",
+    "ipfshttpclient>=0.7.0",
+    "pydantic>=2.6",
+    "typer>=0.12",
+    "numpy",
+    "scipy",
+    "black",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "mypy",
+    "ruff",
+]
+gpu = [
+    "bitsandbytes>=0.43"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"

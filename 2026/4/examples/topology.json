@@ -1,0 +1,68 @@
+{
+  "project": "chain-emulation-demo",
+  "remote_workdir": "/tmp/distributed-emulator",
+  "hosts": [
+    {
+      "name": "local-machine",
+      "address": "127.0.0.1",
+      "ssh_user": "",
+      "memory_mb": 128000,
+      "bridge_name": "br-local"
+    },
+    {
+      "name": "remote-machine",
+      "address": "172.16.0.117",
+      "ssh_user": "blockchain",
+      "memory_mb": 128000,
+      "bridge_name": "br-remote"
+    }
+  ],
+  "defaults": {
+    "image": "ethereum/client-go:stable",
+    "memory_mb": 768,
+    "network": "emulation-net"
+  },
+  "nodes": [
+    {
+      "id": "bootnode",
+      "memory_mb": 1024,
+      "command": [
+        "geth",
+        "--dev",
+        "--http",
+        "--http.addr",
+        "0.0.0.0"
+      ]
+    },
+    {
+      "id": "peer-node",
+      "command": [
+        "geth",
+        "--dev"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "bootnode",
+      "target": "peer-node",
+      "latency_ms": 40,
+      "loss_pct": 0.2,
+      "bandwidth_mbps": 50
+    },
+    {
+      "source": "peer-node",
+      "target": "bootnode",
+      "latency_ms": 40,
+      "loss_pct": 0.2,
+      "bandwidth_mbps": 50
+    }
+  ],
+  "emulation": {
+    "quantization_ms": 10,
+    "rule_mode": "class-aggregate"
+  },
+  "time_inflation": {
+    "factor": 1.0
+  }
+}

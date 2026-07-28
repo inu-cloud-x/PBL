@@ -1,0 +1,105 @@
+{
+  "project": "chain-scale-2",
+  "remote_workdir": "/home/blockchain/distributed-emulator-run",
+  "emulation": {
+    "quantization_ms": 10,
+    "rule_mode": "host-veth-exact"
+  },
+  "time_inflation": {
+    "factor": 4.0
+  },
+  "network": {
+    "mode": "vxlan",
+    "subnet": "10.42.0.0/16",
+    "gateway": "10.42.0.1",
+    "gateway_by_host": {
+      "local-machine": "10.42.0.1",
+      "remote-machine": "10.42.0.2"
+    },
+    "vxlan_id": 4242,
+    "vxlan_port": 4789,
+    "mtu": 1450
+  },
+  "peer_topology": {
+    "type": "ring-offset"
+  },
+  "host_latency_policy": "subtract_from_emulated_delay",
+  "host_latency_ms": {
+    "local-machine->remote-machine": 1,
+    "remote-machine->local-machine": 1
+  },
+  "ebpf": {
+    "enabled": false,
+    "mode": "tcp-rto",
+    "auto_apply": false
+  },
+  "hosts": [
+    {
+      "name": "local-machine",
+      "address": "172.16.0.116",
+      "ssh_user": "",
+      "memory_mb": 70000,
+      "bridge_name": "br-local"
+    },
+    {
+      "name": "remote-machine",
+      "address": "172.16.0.117",
+      "ssh_user": "blockchain",
+      "memory_mb": 70000,
+      "bridge_name": "br-remote"
+    }
+  ],
+  "workload": {
+    "enabled": true,
+    "tcp_port_base": 30000,
+    "udp_port_base": 40000,
+    "container_p2p_port": 9000,
+    "block_interval_ms": 5000,
+    "transactions_per_block": 20,
+    "target_tcp_connections": 2,
+    "target_udp_connections": 2,
+    "publish_ports": false,
+    "cross_host_peers": true
+  },
+  "defaults": {
+    "image": "p2p-blockchain-daemon:latest",
+    "memory_mb": 220,
+    "network": "emulation-net"
+  },
+  "nodes": [
+    {
+      "id": "emulated-node-0"
+    },
+    {
+      "id": "emulated-node-1"
+    }
+  ],
+  "matrix_model": {
+    "type": "deterministic",
+    "seed": 2026,
+    "latency_ms_values": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      80,
+      100,
+      120
+    ],
+    "loss_pct_values": [
+      0.0,
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "bandwidth_mbps_values": [
+      25,
+      50,
+      100
+    ],
+    "aggregate_sample_size": 32
+  }
+}

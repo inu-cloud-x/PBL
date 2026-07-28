@@ -1,0 +1,3102 @@
+{
+  "project": "chain-scale-500",
+  "remote_workdir": "/tmp/distributed-emulator",
+  "emulation": {
+    "quantization_ms": 10,
+    "rule_mode": "host-veth-exact"
+  },
+  "time_inflation": {
+    "factor": 4.0
+  },
+  "network": {
+    "mode": "vxlan",
+    "subnet": "10.42.0.0/16",
+    "gateway": "10.42.0.1",
+    "gateway_by_host": {
+      "local-machine": "10.42.0.1",
+      "remote-machine": "10.42.0.2"
+    },
+    "vxlan_id": 4242,
+    "vxlan_port": 4789,
+    "mtu": 1450
+  },
+  "peer_topology": {
+    "type": "small-world",
+    "seed": 2026,
+    "local_degree": 2,
+    "shortcut_probability": 0.35
+  },
+  "host_latency_policy": "subtract_from_emulated_delay",
+  "host_latency_ms": {
+    "local-machine->remote-machine": 1,
+    "remote-machine->local-machine": 1
+  },
+  "ebpf": {
+    "enabled": false,
+    "mode": "tcp-rto",
+    "auto_apply": false
+  },
+  "hosts": [
+    {
+      "name": "local-machine",
+      "address": "172.16.0.116",
+      "ssh_user": "",
+      "memory_mb": 70000,
+      "bridge_name": "br-local"
+    },
+    {
+      "name": "remote-machine",
+      "address": "172.16.0.117",
+      "ssh_user": "blockchain",
+      "memory_mb": 70000,
+      "bridge_name": "br-remote"
+    }
+  ],
+  "workload": {
+    "enabled": true,
+    "tcp_port_base": 30000,
+    "udp_port_base": 40000,
+    "container_p2p_port": 9000,
+    "block_interval_ms": 5000,
+    "transactions_per_block": 20,
+    "target_tcp_connections": 1143,
+    "target_udp_connections": 9143,
+    "publish_ports": false,
+    "cross_host_peers": true
+  },
+  "defaults": {
+    "image": "p2p-blockchain-daemon:latest",
+    "memory_mb": 220,
+    "network": "emulation-net"
+  },
+  "nodes": [
+    {
+      "id": "emulated-node-0",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-1",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-2",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-3",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-4",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-5",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-6",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-7",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-8",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-9",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-10",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-11",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-12",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-13",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-14",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-15",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-16",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-17",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-18",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-19",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-20",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-21",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-22",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-23",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-24",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-25",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-26",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-27",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-28",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-29",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-30",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-31",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-32",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-33",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-34",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-35",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-36",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-37",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-38",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-39",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-40",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-41",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-42",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-43",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-44",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-45",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-46",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-47",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-48",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-49",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-50",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-51",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-52",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-53",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-54",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-55",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-56",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-57",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-58",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-59",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-60",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-61",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-62",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-63",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-64",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-65",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-66",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-67",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-68",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-69",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-70",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-71",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-72",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-73",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-74",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-75",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-76",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-77",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-78",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-79",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-80",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-81",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-82",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-83",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-84",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-85",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-86",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-87",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-88",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-89",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-90",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-91",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-92",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-93",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-94",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-95",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-96",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-97",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-98",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-99",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-100",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-101",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-102",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-103",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-104",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-105",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-106",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-107",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-108",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-109",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-110",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-111",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-112",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-113",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-114",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-115",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-116",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-117",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-118",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-119",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-120",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-121",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-122",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-123",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-124",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-125",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-126",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-127",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-128",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-129",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-130",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-131",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-132",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-133",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-134",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-135",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-136",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-137",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-138",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-139",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-140",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-141",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-142",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-143",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-144",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-145",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-146",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-147",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-148",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-149",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-150",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-151",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-152",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-153",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-154",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-155",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-156",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-157",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-158",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-159",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-160",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-161",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-162",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-163",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-164",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-165",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-166",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-167",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-168",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-169",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-170",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-171",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-172",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-173",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-174",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-175",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-176",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-177",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-178",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-179",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-180",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-181",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-182",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-183",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-184",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-185",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-186",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-187",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-188",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-189",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-190",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-191",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-192",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-193",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-194",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-195",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-196",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-197",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-198",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-199",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-200",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-201",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-202",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-203",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-204",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-205",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-206",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-207",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-208",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-209",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-210",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-211",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-212",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-213",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-214",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-215",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-216",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-217",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-218",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-219",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-220",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-221",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-222",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-223",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-224",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-225",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-226",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-227",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-228",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-229",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-230",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-231",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-232",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-233",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-234",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-235",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-236",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-237",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-238",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-239",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-240",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-241",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-242",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-243",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-244",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-245",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-246",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-247",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-248",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-249",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-250",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-251",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-252",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-253",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-254",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-255",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-256",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-257",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-258",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-259",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-260",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-261",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-262",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-263",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-264",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-265",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-266",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-267",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-268",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-269",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-270",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-271",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-272",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-273",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-274",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-275",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-276",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-277",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-278",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-279",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-280",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-281",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-282",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-283",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-284",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-285",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-286",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-287",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-288",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-289",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-290",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-291",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-292",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-293",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-294",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-295",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-296",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-297",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-298",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-299",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-300",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-301",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-302",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-303",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-304",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-305",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-306",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-307",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-308",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-309",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-310",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-311",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-312",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-313",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-314",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-315",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-316",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-317",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-318",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-319",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-320",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-321",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-322",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-323",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-324",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-325",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-326",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-327",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-328",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-329",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-330",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-331",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-332",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-333",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-334",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-335",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-336",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-337",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-338",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-339",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-340",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-341",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-342",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-343",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-344",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-345",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-346",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-347",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-348",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-349",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-350",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-351",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-352",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-353",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-354",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-355",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-356",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-357",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-358",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-359",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-360",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-361",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-362",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-363",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-364",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-365",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-366",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-367",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-368",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-369",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-370",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-371",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-372",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-373",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-374",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-375",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-376",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-377",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-378",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-379",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-380",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-381",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-382",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-383",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-384",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-385",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-386",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-387",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-388",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-389",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-390",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-391",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-392",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-393",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-394",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-395",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-396",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-397",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-398",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-399",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-400",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-401",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-402",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-403",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-404",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-405",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-406",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-407",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-408",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-409",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-410",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-411",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-412",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-413",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-414",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-415",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-416",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-417",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-418",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-419",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-420",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-421",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-422",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-423",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-424",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-425",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-426",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-427",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-428",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-429",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-430",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-431",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-432",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-433",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-434",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-435",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-436",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-437",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-438",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-439",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-440",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-441",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-442",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-443",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-444",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-445",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-446",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-447",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-448",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-449",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-450",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-451",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-452",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-453",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-454",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-455",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-456",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-457",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-458",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-459",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-460",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-461",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-462",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-463",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-464",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-465",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-466",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-467",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-468",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-469",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-470",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-471",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-472",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-473",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-474",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-475",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-476",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-477",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-478",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-479",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-480",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-481",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-482",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-483",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-484",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-485",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-486",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-487",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-488",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-489",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-490",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-491",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-492",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-493",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-494",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-495",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-496",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-497",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-498",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    },
+    {
+      "id": "emulated-node-499",
+      "env": {
+        "RESEARCH_STATE_MB": "180"
+      }
+    }
+  ],
+  "matrix_model": {
+    "type": "deterministic",
+    "seed": 2026,
+    "latency_ms_values": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      80,
+      100,
+      120
+    ],
+    "loss_pct_values": [
+      0.0,
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "bandwidth_mbps_values": [
+      25,
+      50,
+      100
+    ],
+    "aggregate_sample_size": 32
+  }
+}
