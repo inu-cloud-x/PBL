@@ -1,0 +1,83 @@
+{
+  "project": "chain-matrix-demo",
+  "remote_workdir": "/tmp/distributed-emulator",
+  "hosts": [
+    {
+      "name": "local-machine",
+      "address": "172.16.0.116",
+      "ssh_user": "",
+      "memory_mb": 128000,
+      "bridge_name": "br-local"
+    },
+    {
+      "name": "remote-machine",
+      "address": "172.16.0.117",
+      "ssh_user": "blockchain",
+      "memory_mb": 128000,
+      "bridge_name": "br-remote"
+    }
+  ],
+  "defaults": {
+    "image": "p2p-blockchain-daemon:latest",
+    "memory_mb": 128,
+    "network": "emulation-net"
+  },
+  "nodes": [
+    {
+      "id": "emulated-node-0"
+    },
+    {
+      "id": "emulated-node-1"
+    }
+  ],
+  "matrix": {
+    "nodes": [
+      "emulated-node-0",
+      "emulated-node-1"
+    ],
+    "latency_ms": [
+      [
+        0,
+        40
+      ],
+      [
+        40,
+        0
+      ]
+    ],
+    "loss_pct": [
+      [
+        0,
+        0.2
+      ],
+      [
+        0.2,
+        0
+      ]
+    ],
+    "bandwidth_mbps": [
+      [
+        0,
+        50
+      ],
+      [
+        50,
+        0
+      ]
+    ]
+  },
+  "emulation": {
+    "quantization_ms": 10,
+    "rule_mode": "class-aggregate"
+  },
+  "time_inflation": {
+    "factor": 1.0
+  },
+  "workload": {
+    "enabled": true,
+    "tcp_port_base": 30000,
+    "udp_port_base": 40000,
+    "container_p2p_port": 9000,
+    "block_interval_ms": 1000
+  }
+}

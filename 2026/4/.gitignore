@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+.codex/
+.vscode-server/
+.ssh/
+build/
+distributed-emulator-run/
+*.log
+*.tmp
+.DS_Store
+Toward scalable docker-based emulations of blockchain networks for research and development*.pdf
+ScalableBlockchainEmulations/
