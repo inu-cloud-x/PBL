@@ -8,10 +8,10 @@
 
 각 연도를 클릭하면 해당 연도의 프로젝트 세부 목록과 결과물을 확인할 수 있습니다.
 
-| Year                                                                       | Theme & Focus                           | Projects     |
-| -------------------------------------------------------------------------- | --------------------------------------- | ------------ |
-| **[📂 2025](https://github.com/inu-cloud-x/PBL/blob/main/2025/README.md)** | **Cloud Security & Connected Mobility** | `8 Projects` |
-| **[📂 2026](https://github.com/inu-cloud-x/PBL/blob/main/2026/README.md)** | **Blockchain PBL**                      | `5 Projects` |
+| Year                                                                       | Theme & Focus                           | Projects     | Materials     |
+| -------------------------------------------------------------------------- | --------------------------------------- | ------------ | ------------ |
+| **[📂 2025](https://github.com/inu-cloud-x/PBL/blob/main/2025/README.md)** | **Cloud Security & Connected Mobility** | `8 Projects` | [강의링크](https://github.com/INUOSLab/ConnectedCarCourse/blob/main/index.md#%EC%BB%A4%EB%84%A5%ED%8B%B0%EB%93%9C%EC%B9%B4%EC%99%80-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EC%BB%B4%ED%93%A8%ED%8C%85) |
+| **[📂 2026](https://github.com/inu-cloud-x/PBL/blob/main/2026/README.md)** | **Blockchain PBL**                      | `5 Projects` | |
 
 > _각 폴더 내에 상세 `README.md`와 결과물 링크가 포함되어 있습니다._
 
